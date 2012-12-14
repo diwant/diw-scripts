@@ -13,7 +13,8 @@ drush @$1 si $2 --sites-subdir="$1" -y --working-copy
 echo "Revert all features..."
 drush @$1 fra -y
 
-echo "Run compass..."
-compass compile `drush @$1 dd`/profiles/$2/themes
+echo "You should rebuild the css on these themes..."
+THEROOT=`drush @$1 dd`
+echo `ls $THEROOT/profiles/$2/themes`
 
 echo "...Done!"
