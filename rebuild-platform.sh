@@ -11,7 +11,7 @@ echo "Create the temp directory if it ain't there..."
 mkdir -p /var/aegir/temp 
 
 echo "Storing sites folder in the sites bank..."
-mv -f /var/aegir/platform/$1/sites /var/aegir/temp/sites.$1
+mv -f /var/aegir/platforms/$1/sites /var/aegir/temp/sites.$1
 
 echo "Removing old platform..."
 rm -Rf /var/aegir/platforms/$1 
@@ -23,7 +23,7 @@ echo "Remove the new sites directory..."
 rm -Rf /var/aegir/platforms/$1/sites
 
 echo "Bring back the sites directory..."
-mv -f /var/aegir/temp/sites.$1 /var/aegir/platform/$1/sites
+mv -f /var/aegir/temp/sites.$1 /var/aegir/platforms/$1/sites
 
 echo "You should reinstall these sites..."
 echo `ls /var/aegir/platforms/$1/sites/`
