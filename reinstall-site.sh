@@ -13,8 +13,11 @@ drush @$1 si $2 --sites-subdir="$1" -y --working-copy
 echo "Revert all features..."
 drush @$1 fra -y
 
-echo "You should rebuild the css on these themes..."
+echo "Updating password..."
+drush @$1 upwd admin --password=admin
+
+echo "You should regen the css on these themes..."
 THEROOT=`drush @$1 dd`
-echo `ls $THEROOT/profiles/$2/themes`
+echo `ls $THEROOT/profiles/$2/themes/custom`
 
 echo "...Done!"
