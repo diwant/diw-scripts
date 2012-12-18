@@ -4,11 +4,14 @@
 # @param $2 the project short namee (i.e. crazyloki)
 # @param $3 the site subdomain (i.e. simba)
 # @param $4 the theme to regenerate
-echo "== I'm going to regenerate custom theme $4 on $3.$2.$1 ok? =="
 
-echo "Calling compass..."
-THEROOT=`drush @$1 dd`
+echo "== I'm going to reset $4 on $3.$2.$1 =="
 
-compass compile $THEROOT/profiles/$2app/themes/custom/$4
+echo "Regenerating the theme css..."
+~/.diw-scripts/regen-compass.sh $1 $2 $3 $4
 
-echo "...Done!"
+echo "Revert all features..."
+drush @$3.$2.$1 fra -y
+
+echo "Clear all caches..."
+drush @$3.$2.$1 cc all

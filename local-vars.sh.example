@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Server local variables
+
+diwant_platform_directory="/var/aegir/platforms"
+
