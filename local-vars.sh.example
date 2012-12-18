@@ -3,4 +3,4 @@
 # Server local variables
 
 diwant_platform_directory="/var/aegir/platforms"
-
+default_admin_password="password"
