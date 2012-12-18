@@ -12,4 +12,7 @@ THEROOT=`drush @$3.$2.$1 dd`
 
 compass compile $THEROOT/profiles/$2app/themes/custom/$4
 
+echo "Clear all caches..."
+drush @$3.$2.$1 cc all
+
 echo "...Done!"
