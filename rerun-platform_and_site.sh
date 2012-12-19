@@ -11,6 +11,9 @@ echo "= Going to rebuild $1 and then reset $3 ($2) (including regenerate $4) ="
 echo "Rebuilding platform..."
 $HOME/.diw-scripts/rebuild-platform.sh $1
 
+echo "Reinstalling site..."
+$HOME/.diw-scripts/reinstall-site.sh $2 $3
+
 echo "Resetting site..."
 $HOME/.diw-scripts/reset-site.sh $2 $3 $4 
 
