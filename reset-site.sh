@@ -17,7 +17,7 @@ echo "Clear all caches..."
 drush @$2 cc all
 
 source "$HOME/.diw-scripts/local-vars.sh"
-if [ $default_admin_password != "" ]
+if [ "$default_admin_password" != "" ]
 then
   echo "Reset default admin password..."
   drush @$2 upwd admin --password=$default_admin_password
