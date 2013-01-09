@@ -19,7 +19,7 @@ echo "Removing old platform..."
 rm -Rf "$HOME/$diwant_platform_directory/$1"
 
 echo "Make the new platform with drush make..."
-drush make --working-copy  "$HOME/build/build-$1.make" "$HOME/$diwant_platform_directory/$1"
+drush make --working-copy --debug "$HOME/build/build-$1.make" "$HOME/$diwant_platform_directory/$1"
 
 echo "Remove the new sites directory..."
 rm -Rf "$HOME/$diwant_platform_directory/$1/sites"
